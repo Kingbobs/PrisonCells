@@ -1,0 +1,50 @@
+cells:
+  extendPrice: 1000
+  default:
+    world: world
+    price: 1000
+    flags:
+      edit: true
+      public: false
+  lobby:
+    x: 0
+    l: 0
+    z: 0
+    world: world
+  sign:
+    rented:
+      - "§7=+=-[§6CPE§7]-=+="
+      - "§cCell: §e{CELL_ID}"
+      - "§cRented by"
+      - "§e{OWNER}"
+    not_rented:
+      - "§7=+=-[§6CPE§7]-=+="
+      - "§cCell: §e{CELL_ID}"
+      - "§a Open for §aRENT"
+      - "§cPrice: §e{PRICE}"
+  messages:
+    cell_usage: "Usage: {USAGE}"
+    cell_no_permission: "§cYou don't have the permission to do this."
+    cell_none: "§cYou don't have any cells yet."
+    cell_not_yours: "§cThat's not your Cell."
+    cell_not_existing: "§cThat Cell doesn't exist."
+    cell_teleported: "§eTeleported to Cell §c{CELL_ID}§e."
+    cell_expired: "§eYour Cell §c{CELL_ID} §eexpired."
+    cell_cannot_enter: "§cYou can't go in here."
+    cell_private_public: "§eCell §c{CELL_ID} §eis now §a{STATUS}§e."
+    cell_already_private_public: "§eCell §c{CELL_ID} §eis already §a{STATUS}§e."
+    cell_your_cells: "§7=+=-[§6CPE§7]-=+=\n§cYour cells: §e{CELL_LIST}"
+    cell_home_set: "§eSuccessfully set the Cell home."
+    cell_pos_set: "§eSuccessfully set {POS}."
+    cell_flag_set: "§eSuccessfully set {FLAG} to {STATUS}."
+    cell_not_facing_sign: "§cYou're not facing a sign."
+    cell_sign_set: "§eSuccesffully set the sign."
+    cell_setup_before_creating: "§cYou have to set the cell up before creating it."
+    cell_created: "§eSuccessfully created Cell §c{CELL_ID}§e."
+    cell_reset: "§eCell §c{CELL_ID} §esuccessfully reset."
+    cell_extended: "§eSuccessfully extended your rent by 24h. (Cell {CELL_ID})"
+    cell_extend_wait: "§ePlease wait 24h to extend again."
+    cell_not_enough_money: "§eYou don't have enough money to do this."
+    cell_rented: "§eRented Cell {CELL_ID} for {PRICE}."
+    cell_info: "§7=+=-[§6CPE§7]-=+=\n§cCell: §e{CELL_ID}\n§cRented by: §e{OWNER}\n§cExpires in: §e{EXPIRE}"
+    cell_cannot_build: "§cYou can't build here."
