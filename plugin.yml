@@ -2,9 +2,8 @@ name: PrisonCells
 main: PrisonCells\PrisonCells
 author: Kingbobs
 version: 1.0.0
-dependices: [Components]
-api:
-3.0.0
+api: [3.0.0]
+
 commands:
   cell:
     description: Cell command
