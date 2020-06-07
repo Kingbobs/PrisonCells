@@ -27,7 +27,7 @@ use pocketmine\tile\Tile;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
-class PrisonCells pocketmine\plugin\PluginBase::onCommand(pocketmine\command\CommandSender $sender, pocketmine\command\Command $command, string $label, array $args):
+class PrisonCells extends PluginBase implements Listener{
 
 	public static $cells = [];
 	protected static $instance;
