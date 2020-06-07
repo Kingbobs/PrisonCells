@@ -129,9 +129,6 @@ class PrisonCells extends PluginBase implements Listener{
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
 		if($command->getName() === "command"){
-			//Code
-			return true;
-		        }
 			case "cell":
 				if($sender instanceof Prisoner){
 					if(!empty($args[0])){
