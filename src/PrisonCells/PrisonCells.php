@@ -127,8 +127,8 @@ class PrisonCells extends PluginBase implements Listener{
 		}
 	}
 
-	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-		if($command->getName() === "command"){
+	public function onCommand(CommandSender $sender, pocketmine\command\Command $command, string $label, array $args){
+		switch($cmd->getName()){
 			case "cell":
 				if($sender instanceof Prisoner){
 					if(!empty($args[0])){
