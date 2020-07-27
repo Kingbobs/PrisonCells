@@ -1,4 +1,2 @@
-vendor/bin/phpstan analyse src Kingbobs
-
 name: Run test suite
  run: composer run-script test
