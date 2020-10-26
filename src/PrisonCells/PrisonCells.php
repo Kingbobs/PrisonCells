@@ -2,6 +2,7 @@
 
 namespace PrisonCells;
 
+use pocketmine\scheduler\PluginTask;
 use pocketmine\command\Command;
 use pocketmine\scheduler\TaskScheduler;
 use pocketmine\plugin\PluginBase;
@@ -36,11 +37,11 @@ class PrisonCells extends PluginBase implements Listener{
 	protected $setUp = [];
 
 	private $cellWorld;
+	    /** @var TaskScheduler */
+	private $scheduler;
 
 	/** @var string[] */
 	protected $movementCache = [];
-    /** @var TaskScheduler */
-	private $scheduler;
 
 	/**
 	 * @return PrisonCells
@@ -64,8 +65,8 @@ class PrisonCells extends PluginBase implements Listener{
 		}
 
 		// Tasks
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new checkPositionTask($this), 20);
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new updateCellsTask($this), 20);
+	//	$this->getServer()->getScheduler()->scheduleRepeatingTask(new checkPositionTask($this), 20);
+	//	$this->getServer()->getScheduler()->scheduleRepeatingTask(new updateCellsTask($this), 20);
 
 		$this->reloadConfig();
 
@@ -133,7 +134,8 @@ class PrisonCells extends PluginBase implements Listener{
 
 //	public function getCommand(CommandSender $sender, Command $command, $label, array $args){
 	    //public function onCommand(CommandSender $sender, Command $command, $label, array $args){
-	        public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+	  //      function getCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+	            public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
 	       // return false;
 		switch($cmd->getName()){
 			case "cell":
@@ -572,11 +574,11 @@ class PrisonCells extends PluginBase implements Listener{
 
 		return "$days days, $hours hours, $min min, $sec sec";
 	}	
-	public function getScheduler() : TaskScheduler{
-		return bool;
-		//$this->scheduler;
+	public function Scheduler() : TaskScheduler{
+	    $this->getServer()->getScheduler()->scheduleRepeatingTask(new checkPositionTask($this), 20);
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new updateCellsTask($this), 20);
 	}
-//}
-	}
+}
+//	}
 
 //}
