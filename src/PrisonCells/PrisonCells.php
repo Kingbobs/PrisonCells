@@ -3,6 +3,8 @@
 namespace PrisonCells;
 
 use pocketmine\command\Command;
+use pocketmine\scheduler\TaskScheduler;
+use pocketmine\plugin\PluginBase;
 use pocketmine\command\CommandSender;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
@@ -21,12 +23,12 @@ use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\tag\StringTag;
-use pocketmine\plugin\PluginBase;
 use pocketmine\tile\Sign;
 use pocketmine\tile\Tile;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
+//class PrisonCells extends PluginBase implements Listener{
 class PrisonCells extends PluginBase implements Listener{
 
 	public static $cells = [];
@@ -37,6 +39,8 @@ class PrisonCells extends PluginBase implements Listener{
 
 	/** @var string[] */
 	protected $movementCache = [];
+    /** @var TaskScheduler */
+	private $scheduler;
 
 	/**
 	 * @return PrisonCells
@@ -127,8 +131,11 @@ class PrisonCells extends PluginBase implements Listener{
 		}
 	}
 
-	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
-		switch($command->getName()){
+//	public function getCommand(CommandSender $sender, Command $command, $label, array $args){
+	    //public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+	        public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+	       // return false;
+		switch($cmd->getName()){
 			case "cell":
 				if($sender instanceof Prisoner){
 					if(!empty($args[0])){
@@ -564,6 +571,12 @@ class PrisonCells extends PluginBase implements Listener{
 		$sec = ($value % 60);
 
 		return "$days days, $hours hours, $min min, $sec sec";
+	}	
+	public function getScheduler() : TaskScheduler{
+		return bool;
+		//$this->scheduler;
+	}
+//}
 	}
 
-}
+//}
