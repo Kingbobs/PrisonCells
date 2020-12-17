@@ -3,10 +3,13 @@
 namespace PrisonCells;
 
 use pocketmine\level\Position;
+use pocketmine\utils\TextFormat;
+use pocketmine\item\Item;
+use pocketmine\Server;
+use pocketmine\nbt\tag\StringTag;
 use pocketmine\math\Vector3;
 use pocketmine\nbt\tag\ByteTag;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\nbt\tag\StringTag;
 use pocketmine\tile\Sign;
 use pocketmine\utils\Config;
 
@@ -21,7 +24,7 @@ class Cell{
 	protected $sign;
 	protected $pos1;
 	protected $pos2;
-	protected $price = 1000;
+	protected $price = 10000;
 	protected $flags = [];
 	protected $home = null;
 	protected $lvl = null;
